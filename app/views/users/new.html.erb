@@ -1,1 +1,6 @@
-<div> HEY WORLD </div>
+<%= form_with url: "/users", model: @user do |form| %>
+    <%= form.text_field :username %>
+    <%= form.text_field :password %>
+    <%= form.text_field :email %>
+    <%= form.submit %>
+<% end %>
