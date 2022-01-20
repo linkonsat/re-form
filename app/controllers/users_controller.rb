@@ -1,5 +1,16 @@
 class UsersController < ApplicationController
-    def new 
+    def edit 
+        @user = User.find(params[:id])
+    end
+
+    def update
+        @user = User.find(params[:id])
+        debugger
+        user_parameters = params[:user]
+        if @user.update( username: user_parameters[:username], password: user_parameters[:password], email: user_parameters[:email])
+        else
+            render :edit, status: :unprocessable_entity
+        end
     end
 
     def create
@@ -11,4 +22,5 @@ class UsersController < ApplicationController
             render :new
         end
     end
+
 end

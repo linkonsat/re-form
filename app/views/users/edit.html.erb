@@ -1,0 +1,9 @@
+<div>you found me!</div> 
+
+<%= form_with model: @user, method: :patch do |form| %>
+    <%= form.text_field :username %>
+    <%= form.text_field :password %>
+    <%= form.text_field :email %>
+    <%= form.submit %>
+<% end %>
+ 
